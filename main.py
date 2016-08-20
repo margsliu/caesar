@@ -20,12 +20,26 @@ page_footer = """
 </html>
 """
 
+class Index(webapp2.RequestHandler):
+    """ Handles requests coming in to '/' (the root of our site)
+        e.g. www.formation-caesar.com
+    """
 
-
-class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+
+        form_instructions = "<h3>Enter some text to ROT13:</h3>"
+
+        add_form = """
+        <form action="/" method="post">
+            <input type="text" size="80" name="to-be-encrypted"/>
+            <input type="submit" value="Encrypt"/ style="margin-left:25px;">
+        </form>
+
+        """
+
+        response = page_header + form_instructions + add_form + page_footer
+        self.response.write(response)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', Index)
 ], debug=True)
