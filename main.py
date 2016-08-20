@@ -82,7 +82,7 @@ class Index(webapp2.RequestHandler):
         add_form = """
         <form action="/rot" method="post">
             <label>Rotate</label>
-            <input type="text" size="80" name="to-be-encrypted"/>
+            <input type="text" name="to-be-encrypted"/>
             <label>by</label>
             <input type="number" size="10" name="rotation-amount"/>
             <label>letters</label>
@@ -106,22 +106,17 @@ class Rot(webapp2.RequestHandler):
 
         form_instructions = "<h3>Encrypt something!</h3>"
 
-        form_pt1 = """
+
+        add_form = """
         <form action="/rot" method="post">
             <label>Rotate</label>
-            <input type="text" size="80" name="to-be-encrypted" value="
-            """
-
-        form_pt2 = """
-        "/>
-        <label>by</label>
-        <input type="number" size="10" name="rotation-amount"/>
-        <label>letters</label>
-        <input type="submit" value="Encrypt" style="margin-left:25px;">
+            <input type="text" name="to-be-encrypted" value="{0}"/>
+            <label>by</label>
+            <input type="number" size="10" name="rotation-amount"/>
+            <label>letters</label>
+            <input type="submit" value="Encrypt" style="margin-left:25px;">
         </form>
-        """
-
-        add_form = form_pt1 + encrypted_text + form_pt2
+        """.format(encrypted_text)
 
         response = page_header + form_instructions + add_form + page_footer
         self.response.write(response)
