@@ -81,8 +81,11 @@ class Index(webapp2.RequestHandler):
 
         add_form = """
         <form action="/rot" method="post">
+            <label>Rotate</label>
             <input type="text" size="80" name="to-be-encrypted"/>
-            <input type="number" size="20" name="rotation-amount"/>
+            <label>by</label>
+            <input type="number" size="10" name="rotation-amount"/>
+            <label>letters</label>
             <input type="submit" value="Encrypt" style="margin-left:25px;">
         </form>
 
@@ -105,13 +108,16 @@ class Rot(webapp2.RequestHandler):
 
         form_pt1 = """
         <form action="/rot" method="post">
+            <label>Rotate</label>
             <input type="text" size="80" name="to-be-encrypted" value="
             """
 
         form_pt2 = """
         "/>
-        <input type="number" size="20" name"rotation-amount"/>
-        <input type="submit" value="Encrypt"/ style="margin-left:25px;">
+        <label>by</label>
+        <input type="number" size="10" name="rotation-amount"/>
+        <label>letters</label>
+        <input type="submit" value="Encrypt" style="margin-left:25px;">
         </form>
         """
 
