@@ -30,4 +30,3 @@ def user_input_is_valid(cl_args):
 #print(encrypt(input("Type a message: "),int(argv[1])))
 # or use
 print(encrypt("Hello, World!",argv[1]))
-
