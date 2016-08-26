@@ -82,11 +82,11 @@ class Index(webapp2.RequestHandler):
         add_form = """
         <form action="/rot" method="post">
             <label>Rotate</label>
-            <input type="text" name="to-be-encrypted"/>
+                <textarea type="text" name="to-be-encrypted"></textarea>
             <label>by</label>
-            <input type="number" size="10" name="rotation-amount"/>
+                <input type="number" size="10" name="rotation-amount"/>
             <label>letters</label>
-            <input type="submit" value="Encrypt" style="margin-left:25px;">
+                <input type="submit" value="Encrypt" style="margin-left:25px;">
         </form>
 
         """
@@ -110,11 +110,11 @@ class Rot(webapp2.RequestHandler):
         add_form = """
         <form action="/rot" method="post">
             <label>Rotate</label>
-            <input type="text" name="to-be-encrypted" value="{0}"/>
+                <textarea type="text" name="to-be-encrypted">{0}</textarea>
             <label>by</label>
-            <input type="number" size="10" name="rotation-amount"/>
+                <input type="number" size="10" name="rotation-amount"/>
             <label>letters</label>
-            <input type="submit" value="Encrypt" style="margin-left:25px;">
+                <input type="submit" value="Encrypt" style="margin-left:25px;">
         </form>
         """.format(encrypted_text)
 
